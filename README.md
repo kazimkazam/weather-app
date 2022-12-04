@@ -2,7 +2,7 @@
 
 The application is deployed and can be accessed through the link below:
 
-
+## https://kazimkazam-weather-app.netlify.app
 
 This application uses React components to deliver a single-page application (SPA) where users can check the weather.
 
@@ -34,7 +34,29 @@ The bottom part of this forecast section, shows the forecast for each hour of th
 
 ## Screenshots
 
+### Starting page
 
+![image](https://github.com/kazimkazam/weather-app/blob/master/screenshots/startingPage.png?raw=true)
+
+### Search bar
+
+![image](https://github.com/kazimkazam/weather-app/blob/master/screenshots/searchBar.png?raw=true)
+
+### Information display
+
+![image](https://github.com/kazimkazam/weather-app/blob/master/screenshots/infoDisplayed.png?raw=true)
+
+## Forecast date selection
+
+![image](https://github.com/kazimkazam/weather-app/blob/master/screenshots/forecastDateOptions.png?raw=true)
+
+### Forecast scroll
+
+![image](https://github.com/kazimkazam/weather-app/blob/master/screenshots/forecastScroll.png?raw=true)
+
+### Alerts
+
+![image](https://github.com/kazimkazam/weather-app/blob/master/screenshots/alerts.png?raw=true)
 
 ## Tests
 
