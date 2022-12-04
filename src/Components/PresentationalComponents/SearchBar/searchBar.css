@@ -1,0 +1,34 @@
+.searchBar {
+    margin-top: 1.5rem;
+    background: linear-gradient(21deg, #10abff, #1beabd);
+    padding: 0.2rem;
+    display: inline-block;
+    border-radius: 1rem;
+}
+
+input {
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    z-index: 1;
+    font-size: 2rem;
+    text-align: center;
+
+    background-color: black;
+    color: white;
+}
+
+.searchBar :focus {
+    box-shadow: inset 0 0 0 3px #fff,
+			0 0 0 4px #fff,
+			3px -3px 30px #1beabd, 
+			-3px 3px 30px #10abff;
+}
+
+.searchBar ::placeholder {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}

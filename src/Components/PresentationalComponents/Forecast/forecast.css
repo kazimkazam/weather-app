@@ -1,0 +1,84 @@
+.forecast {
+    grid-area: 1 / 3 / 4 / 3;
+    background-color: #2D4059;
+    border-radius: 1rem;
+
+    display: grid;
+    grid-template: 5% 30% 65% / auto;
+}
+
+.forecast-intro {
+    grid-area: 1 / 1 / 1 / 1;
+    margin-top: 0.7rem;
+}
+
+.forecast-day {
+    grid-area: 2 / 1 / 2 / 1;
+    margin-top: 0.8rem;
+}
+
+.forecast-hour {
+    grid-area: 3 / 1 / 3 / 1;
+    margin-top: 4rem;
+    background-color: #41536b;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow-y: scroll;
+}
+
+.forecast-hour .hour {
+    margin-top: 0.7rem;
+}
+
+.forecast-hour::-webkit-scrollbar {
+    display: none;
+}
+
+select {
+    min-width: 8rem;
+    min-height: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+
+    border: #61dafb solid 0.15rem;
+    border-radius: 0.5rem;
+    margin-top: 0.7rem;
+
+    appearance: none;
+    background-color: black;
+    color: white;
+}
+
+.select :focus {
+    border-color:     #800080;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    color: #222; 
+    outline: none;
+}
+
+.forecast-day table {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-collapse: separate;
+    border-spacing: 1.9rem 0.2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forecast-day img {
+    margin-top: 0.5rem;
+}
+
+.forecast-hour table {
+    border-collapse: separate;
+    border-spacing: 2rem 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.darken {
+    background-color: #2D4059;
+    height: 1.5rem;
+    line-height: 1.2rem;
+}

@@ -1,0 +1,37 @@
+.alerts {
+    position: absolute;
+    top: 8rem;
+    right: 5rem;
+    background-color: #2D4059;
+    height: 3rem;
+    width: 30rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 2rem;
+}
+
+.alerts h2 {
+    line-height: 2.7rem;
+    text-align: right;
+    transform: translateX(-100%);
+    animation: moving-text 30s linear infinite;
+}
+
+.alerts h2 {
+    color: orangered;
+}
+
+.alerts span {
+    color: white;
+}
+
+@keyframes moving-text {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-500%);
+    }
+}
