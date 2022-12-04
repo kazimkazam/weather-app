@@ -2,7 +2,7 @@ var clientId = process.env.REACT_APP_CLIENT_ID;
 
 const Prevision = {
     async search(location) {
-        const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${clientId}&q=${location}&days=3&alerts=yes`);
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${clientId}&q=${location}&days=3&alerts=yes`);
         const jsonResponse = await response.json();
 
         const jsonArray = Object.entries(jsonResponse);
