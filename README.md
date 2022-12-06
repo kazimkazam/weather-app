@@ -70,7 +70,7 @@ Tests runned on:
 - "jest": "^28.1.3"
 - "msw": "^0.49.1"
 
-
+![image](https://github.com/kazimkazam/weather-app/blob/master/screenshots/tests/tests.png?raw=true)
 
 ## Author
 
