@@ -7,7 +7,7 @@ class ContainerSports extends React.Component {
             let data = this.props.sports;
             return data.map(game => {
                 return(
-                    <tbody key={ game.match } >
+                    <tbody key={ game.match } data-testid={ 'sportsData' } >
                         <tr>
                             <td>{ game.country } / { game.stadium }</td>
                             <td>{ game.tournament } / { game.start }</td>

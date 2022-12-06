@@ -18,7 +18,7 @@ class ContainerForecast extends React.Component {
     renderSelectDates() {
         if (this.props.forecast.dates) {
             return this.props.forecast.dates.map(date => {
-                return <option value={ date } key={ date }>{ date }</option>;
+                return <option value={ date } key={ date } data-testid={ date } >{ date }</option>;
             });
         }
     };
@@ -26,10 +26,9 @@ class ContainerForecast extends React.Component {
     renderDayForecast() {
         if (this.state.dayToForecast && this.props.forecast.data) {
             let forecast = this.props.forecast.data.filter(data => data.date === this.state.dayToForecast);
-
             return(
                 <div className='forecast-day'>
-                    <img src={ forecast[0].day.condition.icon } alt={ 'weather icon' } />
+                    <img src={ forecast[0].day.condition.icon } alt={ 'weather icon' } data-testid={ 'forecastDayIcon' } />
                     <p>{ forecast[0].day.condition.text }</p>
 
                     <table>
@@ -90,13 +89,12 @@ class ContainerForecast extends React.Component {
     renderHourForecast() {
         if (this.state.dayToForecast && this.props.forecast.data) {
             let forecast = this.props.forecast.data.filter(data => data.date === this.state.dayToForecast);
-            
             return forecast[0].hour.map(hour => {
                 return(
                     <div className='hour' key={ hour.time.split(' ')[1] } >
                         <div className='condition'>
                             <h3 className='darken'>{ hour.time.split(' ')[1] }</h3>
-                            <img src={ hour.condition.icon } alt={ 'weather icon' } />
+                            <img src={ hour.condition.icon } alt={ 'weather icon' } data-testid={ 'forecastHourIcon' } />
                         </div>
                         <div className='info'>
                             <table>

@@ -17,7 +17,7 @@ class Forecast extends React.Component {
             <section className='forecast'>
                 <div className='forecast-intro'>
                     <h2>Day overview</h2>
-                    <select defaultValue="default" onChange={ this.handleChange } >
+                    <select defaultValue="default" onChange={ this.handleChange } data-testid={ 'forecastSelectDate' } >
                         <option value="default" disabled hidden >Select a date.</option>
                         { this.props.dates }
                     </select>

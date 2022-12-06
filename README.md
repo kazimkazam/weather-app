@@ -60,6 +60,16 @@ The bottom part of this forecast section, shows the forecast for each hour of th
 
 ## Tests
 
+Tests were conducted using React Testing Library. To intersect requests made to the Weather API, it was used the Mock Service Worker (MSW) and mocked responses were returned.
+
+Tests runned on:
+
+- "@testing-library/jest-dom": "^5.16.4"
+- "@testing-library/react": "^13.4.0"
+- "@testing-library/user-event": "^13.5.0"
+- "jest": "^28.1.3"
+- "msw": "^0.49.1"
+
 
 
 ## Author

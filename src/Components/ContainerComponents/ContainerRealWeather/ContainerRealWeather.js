@@ -5,9 +5,9 @@ class ContainerRealWeather extends React.Component {
     renderFigure() {
         if (this.props.realWeather.country) {
             return(
-                <div className='figure' role={ 'figure' } >
+                <div className={ 'figure' } data-testid={ 'realWeatherFigure' } >
                     <h2>Now</h2>
-                    <img src={ this.props.realWeather.icon } alt={ 'weather icon' } />
+                    <img src={ this.props.realWeather.icon } alt={ 'weather icon' } data-testid={ 'realWeatherIcon' } />
                     <p>{ this.props.realWeather.status }</p>
                     <br />
                     <p>Last updated on { this.props.realWeather.lastUpdate }</p>
@@ -44,7 +44,7 @@ class ContainerRealWeather extends React.Component {
             };
 
             return(
-                <div className='weather-info' >
+                <div className={ 'weather-info' } data-testid={ 'weather-info' } >
                     <table>
                         <thead>
                             <tr>
