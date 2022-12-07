@@ -32,11 +32,11 @@ describe('test App component', () => {
     it('should load weather data after keydown', async () => {
         // fire event user typing the location
         const searchField = screen.queryByTestId('searchInput');
-        await waitFor(() => fireEvent.change(searchField, { target: { value: 'test' } }));
+        fireEvent.change(searchField, { target: { value: 'test' } });
 
         // fire event user hitting the enter key
-        await waitFor(() => fireEvent.focus(searchField));
-        await waitFor(() => fireEvent.keyDown(searchField, { key: 'Enter', code: 'Enter', keyCode: 13, charCode: 13 }));
+        fireEvent.click(searchField);
+        fireEvent.keyDown(searchField, { key: 'Enter', code: 'Enter', keyCode: 13, charCode: 13 });
 
         // fire event selecting day to forecast
         await waitFor(() => userEvent.selectOptions(screen.getByTestId('forecastSelectDate'), [ '2022-12-07' ]));
