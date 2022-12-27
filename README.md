@@ -20,10 +20,15 @@ This application uses React components to deliver a single-page application (SPA
 
 The SPA was coded using React.
 
+The website returns weather and sports related information to the user on any location of their choice. The data is fetched from Weather API (https://www.weatherapi.com).
+
+The loading spinner used while waiting for data to be fetched and shown is based on the react-loading package (https://www.npmjs.com/package/react-loading).
+
 The application is running on:
 
 - react 18.2.0
 - react-dom 18.2.0
+- react-loading: 2.0.3
 
 ## How to Use
 
