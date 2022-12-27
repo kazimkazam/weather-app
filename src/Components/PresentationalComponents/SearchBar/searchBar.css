@@ -1,4 +1,5 @@
 .searchBar {
+    position: absolute;
     margin-top: 1.5rem;
     background: linear-gradient(21deg, #10abff, #1beabd);
     padding: 0.2rem;

@@ -1,7 +1,5 @@
 .alerts {
-    position: absolute;
-    top: 8rem;
-    right: 5rem;
+    margin-top: 1.5rem;
     background-color: #2D4059;
     height: 3rem;
     width: 30rem;
@@ -12,14 +10,11 @@
 }
 
 .alerts h2 {
+    color: orangered;
     line-height: 2.7rem;
     text-align: right;
     transform: translateX(-100%);
     animation: moving-text 30s linear infinite;
-}
-
-.alerts h2 {
-    color: orangered;
 }
 
 .alerts span {
@@ -28,7 +23,7 @@
 
 @keyframes moving-text {
     from {
-        transform: translateX(100%);
+        transform: translateX(50%);
     }
 
     to {

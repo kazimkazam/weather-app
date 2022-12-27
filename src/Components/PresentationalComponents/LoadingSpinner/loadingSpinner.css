@@ -1,0 +1,11 @@
+#loading-spinner {
+    background-color: #2D4059;
+    border-radius: 1rem;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    /* correct spinner centering */
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+};
+

@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
 
     render() {
         return(
-            <section className='searchBar'>
+            <section id='searchBar' className='searchBar'>
                 <input type={ 'text' } placeholder={ 'Enter a location.' } data-testid={ 'searchInput' } onChange={ this.handleChange } onKeyDown={ this.onKeyDown } />
             </section>
         );
