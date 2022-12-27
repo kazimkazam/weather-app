@@ -7,10 +7,6 @@ describe('test App component', () => {
     beforeEach(() => {
         render(<App />);
     });
-
-    afterEach(() => {
-        cleanup();
-    });
     
     it('should start with initial state', async () => {
         const searchField = screen.queryByTestId('searchInput');
@@ -27,6 +23,19 @@ describe('test App component', () => {
         
         const sportsData = screen.queryByTestId('sportsData');
         expect(sportsData).not.toBeInTheDocument();
+    });
+
+    it('should show loading spinner while fetching data', async () => {
+        // fire event user typing the location
+        const searchField = screen.queryByTestId('searchInput');
+        fireEvent.change(searchField, { target: { value: 'test' } });
+
+        // fire event user hitting the enter key
+        fireEvent.click(searchField);
+        fireEvent.keyDown(searchField, { key: 'Enter', code: 'Enter', keyCode: 13, charCode: 13 });
+
+        // check if loading spinner is being shown
+        await waitFor(() => expect(screen.getByTestId('loading-spinner').style.visibility).toBe('visible'));
     });
 
     it('should load weather data after keydown', async () => {
@@ -55,6 +64,44 @@ describe('test App component', () => {
         // hour
         await waitFor(() => expect(screen.getByText('04:00')).toBeInTheDocument());
         await waitFor(() => expect(screen.getByText('09:00')).toBeInTheDocument());
+        await waitFor(() => expect(screen.getByText('18:00')).toBeInTheDocument());
+
+        // alerts
+        await waitFor(() => expect(screen.getByText('Periods of rain, sometimes heavy and accompanied by thunderstorms.')).toBeInTheDocument());
+
+        // sports
+        await waitFor(() => expect(screen.getByText('FIFA World Cup Round of 16 / 2022-12-06 15:00')).toBeInTheDocument());
+        await waitFor(() => expect(screen.getByText('Boreham Wood vs Oldham Athletic')).toBeInTheDocument());
+        await waitFor(() => expect(screen.getByText('Galatasaray vs Villarreal')).toBeInTheDocument());
+    });
+
+    it('should hide loading spinner if weather info is being shown', async () => {
+        // fire event user typing the location
+        const searchField = screen.queryByTestId('searchInput');
+        fireEvent.change(searchField, { target: { value: 'test' } });
+
+        // fire event user hitting the enter key
+        fireEvent.click(searchField);
+        fireEvent.keyDown(searchField, { key: 'Enter', code: 'Enter', keyCode: 13, charCode: 13 });
+
+        // check if loading spinner is being shown
+        await waitFor(() => expect(screen.getByTestId('loading-spinner').style.visibility).toBe('visible'));
+
+        // check if loading spinner is not being shown
+        await waitFor(() => expect(screen.getByTestId('loading-spinner').style.visibility).toBe('hidden'));
+
+        // fire event selecting day to forecast
+        await waitFor(() => userEvent.selectOptions(screen.getByTestId('forecastSelectDate'), [ '2022-12-07' ]));
+
+        // verify info was fetched and is now appearing
+        // realtime
+        await waitFor(() => expect(screen.getByText('Temperature feels like / Humidity')).toBeInTheDocument());
+
+        // forecast
+        await waitFor(() => expect(screen.getByText('Moon phase / moon illumination')).toBeInTheDocument());
+
+        // hour
+        await waitFor(() => expect(screen.getByText('04:00')).toBeInTheDocument());
         await waitFor(() => expect(screen.getByText('18:00')).toBeInTheDocument());
 
         // alerts
