@@ -85,7 +85,7 @@ Tests were run on:
 
 ## Author
 
-@kazimkazam (monsieurkazimkazam@gmail.com).
+[@kazimkazam](https://github.com/kazimkazam) (monsieurkazimkazam@gmail.com).
 
 ## References
 
