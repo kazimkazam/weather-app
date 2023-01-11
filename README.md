@@ -51,6 +51,8 @@ At the moment, the SPA is only prepared to work with screens with width greater 
 
 ### Loading info
 
+#### Using the LoadingSpinnerComponent type 'Ripple' from the 'react-spinners-components' package (https://www.npmjs.com/package/react-spinners-components / https://github.com/kazimkazam/react-spinners-components)
+
 ![image](https://github.com/kazimkazam/weather-app/blob/master/screenshots/loadingInfo.png?raw=true)
 
 ### Information display
