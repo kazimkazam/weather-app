@@ -24,8 +24,9 @@ input {
 .searchBar :focus {
     box-shadow: inset 0 0 0 3px #1beabd,
 			/* 0 0 0 4px #1beabd, */
-			3px -3px 30px #1beabd, 
-			-3px 3px 30px #10abff;
+			3px -3px 30px #61dafb, 
+			-3px 3px 30px #61dafb;
+			/* -3px 3px 30px #10abff; */
 }
 
 .searchBar ::placeholder {
