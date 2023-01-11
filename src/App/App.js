@@ -59,49 +59,26 @@ class App extends React.Component {
     document.getElementById('container').style.visibility = 'hidden';
     document.getElementById('alerts').style.visibility = 'hidden';
 
-    setTimeout(() => {
-      Weather.search(location)
-      .then(
-        realWeather => {
-          this.setState({ realWeather: realWeather })
-        }
-      );
+    Weather.search(location)
+    .then(
+      realWeather => {
+        this.setState({ realWeather: realWeather })
+      }
+    );
 
-      Prevision.search(location)
-      .then(
-        forecast => {
-          this.setState({ forecast: forecast })
-        }
-      );
+    Prevision.search(location)
+    .then(
+      forecast => {
+        this.setState({ forecast: forecast })
+      }
+    );
 
-      SportsAPI.search(location)
-      .then(
-        sports => {
-          this.setState({ sports: sports })
-        }
-      );
-    }, 10000)
-
-    // Weather.search(location)
-    // .then(
-    //   realWeather => {
-    //     this.setState({ realWeather: realWeather })
-    //   }
-    // );
-
-    // Prevision.search(location)
-    // .then(
-    //   forecast => {
-    //     this.setState({ forecast: forecast })
-    //   }
-    // );
-
-    // SportsAPI.search(location)
-    // .then(
-    //   sports => {
-    //     this.setState({ sports: sports })
-    //   }
-    // );
+    SportsAPI.search(location)
+    .then(
+      sports => {
+        this.setState({ sports: sports })
+      }
+    );
   };
 
   render() {
